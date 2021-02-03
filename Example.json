@@ -1,0 +1,32 @@
+{
+    "verison": "list/0.1",
+    "subLists": null,
+    "posts": [
+        {
+            "version": "post/0.1",
+            "update": "2021-02-02T12:18:20+00:00",
+            "channel": "2ca2da05-84b4-4b59-8209-fbc09bc5cbb0",
+            "history": ["CONTENT_CID","CONTENT_CID_2"],
+            "content": {
+                "version": "image_content/0.1",
+                "image": "IMAGE_CID"
+            },
+            "Operations": [
+                {
+                    "version": "like_opration/0.1",
+                    "value": 0,
+                    "feedback": {
+                        "like":{
+                            "type": "Like",
+                            "content": "CONTENT_CID"
+                        },
+                        "revokeLike":{
+                            "type": "RevokeLike",
+                            "content": "RevokeLike"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

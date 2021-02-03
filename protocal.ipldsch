@@ -1,0 +1,56 @@
+type List struct {
+    version Version
+    subLists nullable [&List]
+    posts nullable [&Post]
+}
+
+type Post struct {
+    version Version
+    update RFC3339
+    channel nullable string
+    history [&Content] #Includes first.
+    content &Content
+    operations [Operation]
+}
+
+type Content enum {
+    ｜ ImageContent
+}
+type ImageContent struct {
+    version Version
+    meta string
+    image Link
+}
+type Operation enum {
+    | LikeOperation
+}
+type LikeOperation struct {
+    # Operation must have the`value` field to provide display information and feedback field to privde feedback information 
+    # If Operation doesn't need to provide information, Set value to null
+    # If Operation doesn't need to privide feedback, Set feedback to null
+    version Version
+    value int
+    feedback LikeFeedBack
+}
+type LikeFeedBack struct {
+    like GenericLikeFeedBack
+    revokeLike GenericLikeFeedBack
+}
+type GenericLikeFeedBack struct {
+    type LikeFeedBackType
+    content &Content
+}
+
+type LikeFeedBackType enum{
+    | Like
+    | RevokeLike
+}
+
+type RFC3339 representation struct
+
+type Version struct {
+    name string
+    version float
+} representation stringjoin {
+    join "/"
+}
