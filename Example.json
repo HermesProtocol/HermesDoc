@@ -9,9 +9,10 @@
             "history": ["CONTENT_CID","CONTENT_CID_2"],
             "content": {
                 "version": "image_content/0.1",
-                "image": "IMAGE_CID"
+                "fileType": "image/gif",
+                "image": "bafybeidpvsny3cbkdpuxt6z6b46xuglpjur2gmfuvrwzxulqfdhk5tqc6a"
             },
-            "Operations": [
+            "operations": [
                 {
                     "version": "like_opration/0.1",
                     "value": 0,

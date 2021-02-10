@@ -3,7 +3,6 @@ type List struct {
     subLists nullable [&List]
     posts nullable [&Post]
 }
-
 type Post struct {
     version Version
     update RFC3339
@@ -14,12 +13,24 @@ type Post struct {
 }
 
 type Content enum {
-    ｜ ImageContent
+    | ImageContent
+    | VideoContent
+    | AudioContent
 }
 type ImageContent struct {
     version Version
-    meta string
+    mime RFC6838
     image Link
+}
+type VideoContent struct {
+    version Version
+    mime RFC6381
+    video Link
+}
+type AudioContent struct {
+    version Version
+    mime RFC6381
+    audio Link
 }
 type Operation enum {
     | LikeOperation
